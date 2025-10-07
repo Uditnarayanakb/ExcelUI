@@ -1,0 +1,39 @@
+html, body, #root { height: 100%; margin: 0; }
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: var(--color-bg-page); color: var(--color-text); }
+* { box-sizing: border-box; }
+
+:root {
+	--color-bg-page: #f5f7fa;
+	--color-text: #1f2430;
+	--color-grid-bg: #ffffff;
+	--color-grid-border: #ccc;
+	--color-grid-header-bg: #f6f7fa;
+	--color-grid-header-active: #d9ecff;
+	--color-grid-cell-border: #e2e2e7;
+	--color-grid-cell-border-alt: #ececef;
+	--color-grid-selection-bg: #b5d9ff66;
+	--color-grid-selection-border: #2a7bd4;
+	--color-grid-filter-bg: #fafbfd;
+	--color-scrollbar-track: #f1f3f6;
+	--color-scrollbar-thumb: #c2ccdb;
+	--color-scrollbar-thumb-hover: #a3b2c6;
+}
+
+.theme-dark {
+	--color-bg-page: #14171c;
+	--color-text: #eef2f8;
+	--color-grid-bg: #1c2128;
+	--color-grid-border: #2a313b;
+	--color-grid-header-bg: #242b33;
+	--color-grid-header-active: #1e4463;
+	--color-grid-cell-border: #303946;
+	--color-grid-cell-border-alt: #2a313b;
+	--color-grid-selection-bg: #2a7bd466;
+	--color-grid-selection-border: #55a6ff;
+	--color-grid-filter-bg: #242b33;
+	--color-scrollbar-track: #1c2128;
+	--color-scrollbar-thumb: #3a4654;
+	--color-scrollbar-thumb-hover: #4d5b6b;
+}
+
+body.theme-transition * { transition: background-color .25s ease, color .25s ease, border-color .25s ease; }

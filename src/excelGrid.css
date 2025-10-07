@@ -1,0 +1,63 @@
+.excel-grid-wrapper { overflow: auto; border: 1px solid #ccc; background: #fff; position: relative; font-size: 14px; color: #1f2430; line-height: 1.2; }
+.eg-table { display: inline-block; min-width: max(100%, 600px); border-collapse: separate; user-select: none; }
+.eg-row { display: flex; }
+.eg-header-row, .eg-filter-row { position: sticky; top: 0; background: #f6f7fa; z-index: 5; border-bottom: 1px solid #d0d0d5; }
+.eg-filter-row { top: 32px; z-index: 4; background: #fafbfd; }
+.eg-corner { width: 50px; flex: 0 0 50px; border-right: 1px solid #d0d0d5; display: flex; align-items: center; justify-content: center; background: #eceff3; font-weight: 600; font-size: 12px; }
+.eg-header, .eg-index { width: 120px; flex: 0 0 120px; min-height: 32px; border-right: 1px solid #e2e2e7; border-bottom: 1px solid #d0d0d5; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-weight: 600; position: relative; font-size: 12px; letter-spacing: .5px; text-transform: uppercase; }
+.eg-index { width: 50px; flex: 0 0 50px; background: #f6f6f8; position: sticky; left: 0; z-index: 3; font-weight: 500; }
+.eg-header.active, .eg-index.active { background: #d9ecff; box-shadow: inset 0 0 0 2px #2a7bd4; }
+.eg-header-btn { background: transparent; border: none; font: inherit; width: 100%; height: 100%; cursor: pointer; padding: 0; }
+.eg-header-btn:focus-visible { outline: 2px solid #2a7bd4; outline-offset: -2px; }
+.eg-cell { width: 120px; flex: 0 0 120px; border-right: 1px solid #e2e2e7; border-bottom: 1px solid #ececef; box-sizing: border-box; display: flex; align-items: stretch; background: #fff; position: relative; }
+.eg-cell.focused { outline: 2px solid #2a7bd4; outline-offset: -2px; z-index: 2; }
+.eg-cell input { border: none; width: 100%; padding: 4px 6px; font: inherit; outline: none; background: transparent; color: inherit; }
+.eg-cell input:focus { background: #fff; }
+.eg-cell input::selection { background: #b5d9ff; }
+.eg-filter-cell { width: 120px; flex: 0 0 120px; border-right: 1px solid #e2e2e7; border-bottom: 1px solid #d0d0d5; background: #fafafd; box-sizing: border-box; display: flex; }
+.eg-filter-cell input { width: 100%; border: none; background: transparent; padding: 4px; font: inherit; outline: none; font-size: 12px; }
+.eg-filter-cell input::placeholder { color: #999; }
+.eg-insert-row, .eg-insert-col { position: absolute; top: 2px; right: 2px; display: flex; gap: 2px; }
+.eg-insert-row button, .eg-insert-col button { font-size: 10px; padding: 0 4px; border: 1px solid #b0b0b8; background: #ffffffd9; cursor: pointer; line-height: 16px; border-radius: 3px; }
+.eg-insert-row button:hover, .eg-insert-col button:hover { background: #e6f2ff; }
+.eg-insert-row button:focus-visible, .eg-insert-col button:focus-visible { outline: 2px solid #2a7bd4; }
+.filter-label { font-size: 11px; font-weight: 500; color: #555; position: sticky; left: 0; background: #fafbfd; z-index: 3; display: flex; align-items: center; justify-content: center; }
+.excel-grid-wrapper::-webkit-scrollbar { height: 12px; width: 12px; }
+.excel-grid-wrapper::-webkit-scrollbar-track { background: #f1f3f6; }
+.excel-grid-wrapper::-webkit-scrollbar-thumb { background: #c2ccdb; border-radius: 6px; border: 2px solid #f1f3f6; }
+.excel-grid-wrapper::-webkit-scrollbar-thumb:hover { background: #a3b2c6; }
+@media (max-width: 900px) { .eg-header, .eg-cell, .eg-filter-cell { width: 100px; flex: 0 0 100px; } }
+.excel-grid-wrapper { overflow: auto; border: 1px solid var(--color-grid-border); background: var(--color-grid-bg); position: relative; font-size: 14px; color: var(--color-text); line-height: 1.2; }
+.eg-table { display: inline-block; min-width: max(100%, 600px); border-collapse: separate; user-select: none; }
+.eg-row { display: flex; }
+.eg-header-row, .eg-filter-row { position: sticky; top: 0; background: var(--color-grid-header-bg); z-index: 5; border-bottom: 1px solid var(--color-grid-cell-border); }
+.eg-filter-row { top: 32px; z-index: 4; background: var(--color-grid-filter-bg); }
+.eg-corner { width: 50px; flex: 0 0 50px; border-right: 1px solid var(--color-grid-cell-border); display: flex; align-items: center; justify-content: center; background: var(--color-grid-header-bg); font-weight: 600; font-size: 12px; }
+.eg-header, .eg-index { width: 120px; flex: 0 0 120px; min-height: 32px; border-right: 1px solid var(--color-grid-cell-border); border-bottom: 1px solid var(--color-grid-cell-border); box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-weight: 600; position: relative; font-size: 12px; letter-spacing: .5px; text-transform: uppercase; background: var(--color-grid-header-bg); }
+.eg-index { width: 50px; flex: 0 0 50px; position: sticky; left: 0; z-index: 3; font-weight: 500; }
+.eg-header.active, .eg-index.active { background: var(--color-grid-header-active); box-shadow: inset 0 0 0 2px var(--color-grid-selection-border); }
+.eg-header-btn { background: transparent; border: none; font: inherit; width: 100%; height: 100%; cursor: pointer; padding: 0; color: inherit; }
+.eg-header-btn:focus-visible { outline: 2px solid var(--color-grid-selection-border); outline-offset: -2px; }
+.eg-cell { width: 120px; flex: 0 0 120px; border-right: 1px solid var(--color-grid-cell-border); border-bottom: 1px solid var(--color-grid-cell-border-alt); box-sizing: border-box; display: flex; align-items: stretch; background: var(--color-grid-bg); position: relative; }
+.eg-cell.focused { outline: 2px solid var(--color-grid-selection-border); outline-offset: -2px; z-index: 2; }
+.eg-cell.selected-range { background: var(--color-grid-selection-bg); }
+.eg-cell.range-edge { box-shadow: inset 0 0 0 2px var(--color-grid-selection-border); }
+.eg-cell input { border: none; width: 100%; padding: 4px 6px; font: inherit; outline: none; background: transparent; color: inherit; }
+.eg-cell input:focus { background: var(--color-grid-bg); }
+.eg-cell input::selection { background: var(--color-grid-selection-bg); }
+.eg-filter-cell { width: 120px; flex: 0 0 120px; border-right: 1px solid var(--color-grid-cell-border); border-bottom: 1px solid var(--color-grid-cell-border); background: var(--color-grid-filter-bg); box-sizing: border-box; display: flex; }
+.eg-filter-cell input { width: 100%; border: none; background: transparent; padding: 4px; font: inherit; outline: none; font-size: 12px; color: inherit; }
+.eg-filter-cell input::placeholder { color: #999; }
+.eg-insert-row, .eg-insert-col { position: absolute; top: 2px; right: 2px; display: flex; gap: 2px; }
+.eg-insert-row button, .eg-insert-col button { font-size: 10px; padding: 0 4px; border: 1px solid var(--color-grid-cell-border); background: #ffffffd9; cursor: pointer; line-height: 16px; border-radius: 3px; }
+body.theme-dark .eg-insert-row button, body.theme-dark .eg-insert-col button { background: #2a313b; color: var(--color-text); }
+.eg-insert-row button:hover, .eg-insert-col button:hover { background: var(--color-grid-header-active); }
+.eg-insert-row button:focus-visible, .eg-insert-col button:focus-visible { outline: 2px solid var(--color-grid-selection-border); }
+.filter-label { font-size: 11px; font-weight: 500; color: #555; position: sticky; left: 0; background: var(--color-grid-filter-bg); z-index: 3; display: flex; align-items: center; justify-content: center; }
+body.theme-dark .filter-label { color: #bbb; }
+.excel-grid-wrapper::-webkit-scrollbar { height: 12px; width: 12px; }
+.excel-grid-wrapper::-webkit-scrollbar-track { background: var(--color-scrollbar-track); }
+.excel-grid-wrapper::-webkit-scrollbar-thumb { background: var(--color-scrollbar-thumb); border-radius: 6px; border: 2px solid var(--color-scrollbar-track); }
+.excel-grid-wrapper::-webkit-scrollbar-thumb:hover { background: var(--color-scrollbar-thumb-hover); }
+
+@media (max-width: 900px) { .eg-header, .eg-cell, .eg-filter-cell { width: 100px; flex: 0 0 100px; } }
